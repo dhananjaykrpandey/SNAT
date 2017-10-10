@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNAT", "SNAT\SNAT.csproj", "{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dhananjaykrpandey.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SNAT\\SNAT.csproj
+		SccProjectName1 = SNAT
+		SccLocalPath1 = SNAT
+	EndGlobalSection
+EndGlobal

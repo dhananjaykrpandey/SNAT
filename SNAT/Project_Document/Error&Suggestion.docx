@@ -1,0 +1,41 @@
+SNAT Software Corrections
+Customization of software, wordings from SNAT Committee Member – M Simelane
+Main Member
+-	For Married Members spouse automatically becomes a nominee. A nominee is optional 
+-	Not forced to make a spouse a nominee. It can be anyone
+-	We need space for members with more than 1 spouse
+Client Observation:
+-	System does not allow to save information if the following beneficiary information is missing
+a)	Email address
+b)	Contact number
+c)	IDs
+d)	Date of Birth
+e)	Residential address( must be removed altogether)
+f)	Relationship – Members are not compelled to disclose relationship of beneficiaries
+
+We need to remove all the restrictions like, contact number, address,
+
+provision should be made to add more than one spouse to the main member
+
+Provision for updating premium amount,
+
+ 
+
+Corrections need to be done:
+1) On Member Entry Form:
+     a) when we enter date of birth, it insert current date and time insteaed of value entered in it. 
+	    same error in all the date time picker controls, need to correct
+	  b) 
+
+
+*************Following Reports are reports required in the sytem
+1. Total Registered Main Member Report
+2. Total Beneficiary Registered under Main Member
+3. Total Late. Main Members as on date
+4. Total Beneficiaries got benefited as on date
+5. Total Amount Collected (monthly)
+6. Total Amount collected (Memberwise)-----> From Date to To Date
+7. Total Number of claims made (monthly) with Remarks
+8. Total Cheque Released (monthly) and Total Cheqeue Released during past / previous months
+
+
