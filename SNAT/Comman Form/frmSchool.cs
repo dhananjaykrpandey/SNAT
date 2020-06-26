@@ -178,7 +178,7 @@ namespace SNAT.Comman_Form
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                 }
                             }
                         }
@@ -209,7 +209,7 @@ namespace SNAT.Comman_Form
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_School", "code", "code", txtCode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtCode, "School code already exists.");
-                        ClsMessage.showMessage("School code already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("School code already exists.");
                         return false;
                     }
                 }
@@ -223,7 +223,7 @@ namespace SNAT.Comman_Form
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_School", "name", "name", txtName.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtName, "School Name already exists.");
-                        ClsMessage.showMessage("School Name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("School Name already exists.");
                         return false;
                     }
                 }
@@ -268,7 +268,7 @@ namespace SNAT.Comman_Form
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

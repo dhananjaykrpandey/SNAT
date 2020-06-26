@@ -1,4 +1,6 @@
-﻿namespace SNAT
+﻿using CrystalDecisions.CrystalReports.Engine;
+
+namespace SNAT
 {
     partial class frmLogin
     {
@@ -29,20 +31,22 @@
         public void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new Telerik.WinControls.UI.RadTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtUserName = new Telerik.WinControls.UI.RadTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnExit = new System.Windows.Forms.Button();
             this.BtnLogin = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPassword
             // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(86, 61);
             this.txtPassword.MaxLength = 15;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.NullText = "Enter User Password";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(254, 20);
             this.txtPassword.TabIndex = 1;
@@ -61,10 +65,10 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserName.Location = new System.Drawing.Point(86, 28);
             this.txtUserName.MaxLength = 30;
             this.txtUserName.Name = "txtUserName";
+            this.txtUserName.NullText = "Enter User Name";
             this.txtUserName.Size = new System.Drawing.Size(254, 20);
             this.txtUserName.TabIndex = 0;
             // 
@@ -131,15 +135,17 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.TextBox txtPassword;
+        public Telerik.WinControls.UI.RadTextBox txtPassword;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtUserName;
+        public Telerik.WinControls.UI.RadTextBox txtUserName;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button BtnExit;
         public System.Windows.Forms.Button BtnLogin;

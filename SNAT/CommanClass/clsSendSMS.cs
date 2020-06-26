@@ -119,7 +119,7 @@ namespace SNAT.CommanClass
                     //}
                     if ((int)result["success"] == 1)
                     {
-                        ClsMessage.showMessage(formatted_server_response(result),System.Windows.Forms.MessageBoxIcon.Information);
+                        ClsMessage.showMessage(formatted_server_response(result));
                         return true;
                     }
                     else

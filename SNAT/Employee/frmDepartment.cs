@@ -136,7 +136,7 @@ namespace SNAT.Employee
         {
             try
             {
-                if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company department Cannot be edited!", MessageBoxIcon.Information); return; }
+                if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company department Cannot be edited!"); return; }
                 // bsDepartmetn.AllowEdit = true;
                 // bsDepartmetn.e();
                 ClsUtility.FormMode = ClsUtility.enmFormMode.EditMode;
@@ -158,7 +158,7 @@ namespace SNAT.Employee
             {
                 if (string.IsNullOrEmpty(txtcode.Text.Trim()) == false)
                 {
-                    if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company department Cannot be deleted!", MessageBoxIcon.Information); return; }
+                    if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company department Cannot be deleted!"); return; }
                     if (ClsMessage.showAskDeleteMessage() == DialogResult.Yes)
                     {
                         Int32 iRow = bsDepartmetn.Position;
@@ -185,7 +185,7 @@ namespace SNAT.Employee
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                   //ClsDataLayer.setLogAcitivity("Department Details", ClsSettings.username, "Failed to Delete Department", "", "Some problem occurs while deleting please contact system administrator.", "Ex");
                                 }
                             }
@@ -217,7 +217,7 @@ namespace SNAT.Employee
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Department", "code", "code", txtcode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtcode, "Department code already exists.");
-                        ClsMessage.showMessage("Department code already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Department code already exists.");
                         return false;
                     }
                 }
@@ -231,7 +231,7 @@ namespace SNAT.Employee
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Department", "name", "name", txtName.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtName, "Department Name already exists.");
-                        ClsMessage.showMessage("Department Name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Department Name already exists.");
                         return false;
                     }
                 }
@@ -274,7 +274,7 @@ namespace SNAT.Employee
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

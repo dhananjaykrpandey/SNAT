@@ -1974,7 +1974,7 @@ namespace SNAT.Comman_Form
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         I_txtmembernationalid.Focus();
                         I_txtMemberId.Text = "";
                         I_txtMemberName.Text = "";
@@ -2192,7 +2192,7 @@ namespace SNAT.Comman_Form
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         J_txtMemNationalID.Focus();
                         J_txtMemberID.Text = "";
                         J_txtMemberName.Text = "";
@@ -2474,7 +2474,7 @@ namespace SNAT.Comman_Form
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         K_txtMemNationalID.Focus();
                         K_txtMemberID.Text = "";
                         K_txtMemName.Text = "";

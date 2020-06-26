@@ -258,7 +258,7 @@ namespace SNAT.Member
                         {
                             if (image.Width > 120 || image.Height > 120)
                             {
-                                ClsMessage.showMessage("Employee image max size(Height & Width) is 120 X 120", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Employee image max size(Height & Width) is 120 X 120");
 
                                 image = new Bitmap(Properties.Resources.img_not_available120X120);
                                 if (image != null)
@@ -407,7 +407,7 @@ namespace SNAT.Member
                             }
                             else
                             {
-                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                             }
                         }
                     }
@@ -437,7 +437,7 @@ namespace SNAT.Member
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Member", "nationalid", "nationalid", txtNationalId.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtNationalId, "National id already exists.");
-                        ClsMessage.showMessage("National id already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("National id already exists.");
                         return false;
                     }
                 }
@@ -451,7 +451,7 @@ namespace SNAT.Member
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Member", "memberid", "memberid", txtMemberID.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtMemberID, "Member id already exists.");
-                        ClsMessage.showMessage("Member id already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Member id already exists.");
                         return false;
                     }
                 }
@@ -467,7 +467,7 @@ namespace SNAT.Member
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Member", "employeeno", "employeeno", txtEmployeeNo.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtEmployeeNo, "Member employee no already exists.");
-                        ClsMessage.showMessage("Member employee no already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Member employee no already exists.");
                         return false;
                     }
                 }
@@ -482,7 +482,7 @@ namespace SNAT.Member
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Member", "tscno", "tscno", txtTSCNo.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtTSCNo, "TSC no already exists.");
-                        ClsMessage.showMessage("TSC no already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("TSC no already exists.");
                         return false;
                     }
                 }
@@ -498,7 +498,7 @@ namespace SNAT.Member
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Member", "membername", "membername", txtMemberName.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtMemberName, "Member name already exists.");
-                        ClsMessage.showMessage("Member name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Member name already exists.");
                         return false;
                     }
                 }
@@ -529,7 +529,7 @@ namespace SNAT.Member
                 }
                 if (string.IsNullOrEmpty(txtemailid.Text.Trim()) == false && ClsUtility.IsValidEmail(txtemailid.Text.Trim()) == false)
                 {
-                    //ClsMessage.showMessage("Invalid email id!!", MessageBoxIcon.Information);
+                    //ClsMessage.showMessage("Invalid email id!!");
                     errorProvider1.SetError(txtemailid, "Invalid email id!!");
                     txtemailid.Focus();
                     return false;
@@ -815,7 +815,7 @@ namespace SNAT.Member
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -1017,25 +1017,25 @@ namespace SNAT.Member
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Beneficiary", "membernationalid", "membernationalid", txtNationalId.Text.Trim()) == true)
                 {
 
-                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!");
                     return false;
                 }
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_BeneficiaryWagesDetails", "nationalid", "nationalid", txtNationalId.Text.Trim()) == true)
                 {
 
-                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!");
                     return false;
                 }
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_BeneficiryDocuments", "nationalid", "nationalid", txtNationalId.Text.Trim()) == true)
                 {
 
-                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!");
                     return false;
                 }
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_MemberDocuments", "nationalid", "nationalid", txtNationalId.Text.Trim()) == true)
                 {
 
-                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("National id already used" + Environment.NewLine + "Cannot Delete!!!");
                     return false;
                 }
                 return true;

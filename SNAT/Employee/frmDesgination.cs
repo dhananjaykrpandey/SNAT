@@ -276,7 +276,7 @@ namespace SNAT.Employee
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company designation Cannot Edited!", MessageBoxIcon.Information); return; }
+            if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company designation Cannot Edited!"); return; }
             ClsUtility.FormMode = ClsUtility.enmFormMode.EditMode;
             SetFormMode(ClsUtility.enmFormMode.EditMode);
             txtName.Focus();
@@ -289,7 +289,7 @@ namespace SNAT.Employee
             {
                 if (string.IsNullOrEmpty(txtcode.Text.Trim()) == false)
                 {
-                    if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company designation Cannot deleted!", MessageBoxIcon.Information); return; }
+                    if (txtcode.Text.Trim().ToUpper() == "SNAT") { ClsMessage.showMessage("Company designation Cannot deleted!"); return; }
                     if (ClsMessage.showAskDeleteMessage() == DialogResult.Yes)
                     {
                         Int32 iRow = bsDesgination.Position;
@@ -316,7 +316,7 @@ namespace SNAT.Employee
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                 }
                             }
                         }
@@ -347,7 +347,7 @@ namespace SNAT.Employee
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Designation", "code", "code", txtcode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtcode, "Designation code already exists.");
-                        ClsMessage.showMessage("Designation code already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Designation code already exists.");
                         return false;
                     }
                 }
@@ -361,7 +361,7 @@ namespace SNAT.Employee
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Designation", "name", "name", txtcode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtcode, "Designation Name already exists.");
-                        ClsMessage.showMessage("Designation Name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Designation Name already exists.");
                         return false;
                     }
                 }
@@ -426,7 +426,7 @@ namespace SNAT.Employee
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

@@ -337,7 +337,7 @@ namespace SNAT.Claim
                             }
                             else
                             {
-                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                             }
                         }
                     }
@@ -1090,7 +1090,7 @@ namespace SNAT.Claim
 
             try
             {
-                if (Convert.ToInt16(lblChqStatusNo.Text.Trim().ToUpper()) > 1) { ClsMessage.showMessage("Cheque Requisition record already posted!!" + Environment.NewLine + "Re-Posting cannot be possible.", MessageBoxIcon.Information); return; }
+                if (Convert.ToInt16(lblChqStatusNo.Text.Trim().ToUpper()) > 1) { ClsMessage.showMessage("Cheque Requisition record already posted!!" + Environment.NewLine + "Re-Posting cannot be possible."); return; }
 
                 if (dtChqDocument == null || dtChqDocument.DefaultView.Count <= 0) { ClsMessage.ProjectExceptionMessage("Claim supported document not uploaded!" + Environment.NewLine + "Please upload supported document."); return; }
                 if (ValidateSave() == false) { return; }
@@ -1109,7 +1109,7 @@ namespace SNAT.Claim
                 ClsDataLayer.ExcuteTranstion(strSqlQuery, sqlTrans);
 
                 sqlTrans.Commit();
-                ClsMessage.showMessage("Cheque Requisition record posted successfully!!", MessageBoxIcon.Information);
+                ClsMessage.showMessage("Cheque Requisition record posted successfully!!");
                 ClsUtility.FormMode = ClsUtility.enmFormMode.NormalMode;
                 SetFormMode(ClsUtility.enmFormMode.NormalMode);
                 FillMemberData();
@@ -1225,7 +1225,7 @@ namespace SNAT.Claim
         private void btnChildAdd_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. ", MessageBoxIcon.Information); txtMemNationalId.Focus(); return; }
+            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. "); txtMemNationalId.Focus(); return; }
             try
             {
                 frmSearch frmsrch = new frmSearch();
@@ -1424,7 +1424,7 @@ namespace SNAT.Claim
             try
             {
 
-                //if (lblChqStatus.Text.Trim().ToUpper() == "Cheque Issued && Received".ToUpper()) { ClsMessage.showMessage("Cheque Issued && Received!!" + Environment.NewLine + "Re-Posting cannot be possible.", MessageBoxIcon.Information); return; }
+                //if (lblChqStatus.Text.Trim().ToUpper() == "Cheque Issued && Received".ToUpper()) { ClsMessage.showMessage("Cheque Issued && Received!!" + Environment.NewLine + "Re-Posting cannot be possible."); return; }
                 if (lIsIssue() == false) { return; }
                 if (dtChqEntery != null && dtChqEntery.DefaultView.Count > 0)
                 {
@@ -1470,7 +1470,7 @@ namespace SNAT.Claim
                         ClsDataLayer.ExcuteTranstion(strSqlQuery, sqlTrans);
 
                         sqlTrans.Commit();
-                        ClsMessage.showMessage("Cheque Requisition record issue and received successfully!!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Cheque Requisition record issue and received successfully!!");
                         ClsUtility.FormMode = ClsUtility.enmFormMode.NormalMode;
                         SetFormMode(ClsUtility.enmFormMode.NormalMode);
                         FillMemberData();
@@ -1478,12 +1478,12 @@ namespace SNAT.Claim
                     }
                     else
                     {
-                        ClsMessage.showMessage("Please make sure all approval process completed!!", MessageBoxIcon.Information); return;
+                        ClsMessage.showMessage("Please make sure all approval process completed!!"); return;
                     }
                 }
 
                 //}
-                //else { ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information); return; }
+                //else { ClsMessage.showMessage("Some problem occurs while saving please contact system administrator."); return; }
 
 
 
@@ -1641,7 +1641,7 @@ namespace SNAT.Claim
                 if (ClsUtility.SendSMS(txtMemNationalId.Text.Trim(), txtMemberID.Text.Trim(), txtMemberName.Text.Trim(), txtMemContactNo.Text.Trim(),
                                txtChqNo.Text.Trim(), txtPayee.Text.Trim(), "Chairperson", strStatus, true) == true)
                 {
-                    ClsMessage.showMessage("SMS Send to Member contact no.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("SMS Send to Member contact no.");
                 }
             }
             catch (Exception ex)
@@ -1690,7 +1690,7 @@ namespace SNAT.Claim
                 if (ClsUtility.SendSMS(txtMemNationalId.Text.Trim(), txtMemberID.Text.Trim(), txtMemberName.Text.Trim(), txtMemContactNo.Text.Trim(),
                                txtChqNo.Text.Trim(), txtPayee.Text.Trim(), "Secretary", strStatus, true) == true)
                 {
-                    ClsMessage.showMessage("SMS Send to Member contact no.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("SMS Send to Member contact no.");
                 }
             }
             catch (Exception ex)
@@ -1739,7 +1739,7 @@ namespace SNAT.Claim
                 if (ClsUtility.SendSMS(txtMemNationalId.Text.Trim(), txtMemberID.Text.Trim(), txtMemberName.Text.Trim(), txtMemContactNo.Text.Trim(), 
                                 txtChqNo.Text.Trim(), txtPayee.Text.Trim(), "Treasurer",strStatus, true)==true)
                 {
-                    ClsMessage.showMessage("SMS Send to Member contact no.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("SMS Send to Member contact no.");
                 }
             }
             catch (Exception ex)

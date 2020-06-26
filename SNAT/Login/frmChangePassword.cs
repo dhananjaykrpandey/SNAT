@@ -43,7 +43,7 @@ namespace SNAT.Document
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.logintable", "password", "password", txtoldPassword.Text.Trim()) == false)
                 {
                     errorProvider1.SetError(txtoldPassword, "Old doesn't match,Please enter correct old password.");
-                    ClsMessage.showMessage("Old doesn't match,Please enter correct old password.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Old doesn't match,Please enter correct old password.");
                     return false;
                 }
 
@@ -60,7 +60,7 @@ namespace SNAT.Document
                 }
                 if (txtpassword.Text.Trim().ToUpper() != txtconfirmpassword.Text.Trim().ToUpper())
                 {
-                    ClsMessage.showMessage("Confirm password does not match with password.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Confirm password does not match with password.");
                     errorProvider1.SetError(txtconfirmpassword, "Confirm password does not match with password.");
                     return false;
                 }
@@ -85,12 +85,12 @@ namespace SNAT.Document
                     int lResult = ClsDataLayer.UpdateData(strQuery);
                     if (lResult >0)
                     {
-                        ClsMessage.showMessage("User password change successfully!!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("User password change successfully!!");
                        // ClsDataLayer.setLogAcitivity("User Password Change", ClsSettings.username, "Password Chagned", "", "User Has Successfully Changed the Password", "Msg");
                     }
                     else
                     {
-                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
 
                     }
 

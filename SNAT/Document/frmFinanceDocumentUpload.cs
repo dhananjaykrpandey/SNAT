@@ -209,20 +209,20 @@ namespace SNAT.Document
 
                 if (string.IsNullOrEmpty(txtMonth_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload month.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload month.");
                     txtMonth_Excel.Focus();
                     return false;
                 }
                 if (string.IsNullOrEmpty(txtYear_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload year.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload year.");
                     txtYear_Excel.Focus();
                     return false;
                 }
 
                 if (string.IsNullOrEmpty(txtYear_Excel.Text.Trim()) == false && Convert.ToInt32(txtYear_Excel.Text.Trim()) <= 1980)
                 {
-                    ClsMessage.showMessage("Year cannot be less than 1980.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Year cannot be less than 1980.");
                     txtYear_Excel.Focus();
                     return false;
                 }
@@ -231,7 +231,7 @@ namespace SNAT.Document
 
                 if (!ClsUtility.IsValidDate(dDate))
                 {
-                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)");
                     txtYear_Excel.Focus();
                     return false;
                 }
@@ -286,27 +286,27 @@ namespace SNAT.Document
             {
                 if (string.IsNullOrEmpty(txtMonth_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload month.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload month.");
                     txtMonth_Excel.Focus();
                     return;
                 }
                 if (string.IsNullOrEmpty(txtYear_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload year.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload year.");
                     txtYear_Excel.Focus();
                     return;
                 }
 
                 if (string.IsNullOrEmpty(txtFileName_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter/select excel file.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter/select excel file.");
                     txtFileName_Excel.Focus();
                     return;
                 }
 
                 if (string.IsNullOrEmpty(cmbExcelSheet.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please select excel sheet name.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please select excel sheet name.");
                     cmbExcelSheet.Focus();
                     return;
                 }
@@ -786,7 +786,7 @@ namespace SNAT.Document
             try
             {
                 dtWages.DefaultView.RowFilter = "ISNULL(lSelect,0)=1";
-                if (dtWages.DefaultView.Count <= 0) { ClsMessage.showMessage("Please select record to import Premium.", MessageBoxIcon.Information); dtWages.DefaultView.RowFilter = ""; return; }
+                if (dtWages.DefaultView.Count <= 0) { ClsMessage.showMessage("Please select record to import Premium."); dtWages.DefaultView.RowFilter = ""; return; }
                 foreach (DataRowView drvRow in dtWages.DefaultView)
                 {
                     drvRow.BeginEdit();
@@ -843,7 +843,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                     }
                 }
                 dtWages.DefaultView.RowFilter = "";

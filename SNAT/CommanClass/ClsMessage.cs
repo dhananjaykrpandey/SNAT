@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
+
 namespace SNAT.Comman_Classes
 {
    public static class ClsMessage
     {
         static readonly string   ProjectName =ClsSettings.ProjectName;
 
-        public static void showMessage(string msg, MessageBoxIcon Icon)
+        public static void showMessage(string msg, RadMessageIcon Icon=RadMessageIcon.Info)
         {
-            MessageBox.Show(msg, ProjectName, MessageBoxButtons.OK, Icon);
+            RadMessageBox.Show(msg, ProjectName, MessageBoxButtons.OK, Icon);
         }
         public static void ProjectExceptionMessage(string msg)
         {
-            MessageBox.Show(msg, ProjectName, MessageBoxButtons.OK,MessageBoxIcon.Error);
+            RadMessageBox.Show(msg, ProjectName,MessageBoxButtons.OK, RadMessageIcon.Error);
         }
         public static void ProjectExceptionMessage(Exception msg)
         {
@@ -25,31 +27,31 @@ namespace SNAT.Comman_Classes
             {
                 innerex = msg.InnerException.ToString();
             }
-            MessageBox.Show(msg + Environment.NewLine + innerex , ProjectName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            RadMessageBox.Show(msg + Environment.NewLine + innerex , ProjectName, MessageBoxButtons.OK, RadMessageIcon.Error);
         }
         public static DialogResult showQuestionMessage(string msg)
         {
-            return MessageBox.Show(msg, ProjectName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return RadMessageBox.Show(msg, ProjectName, MessageBoxButtons.YesNo, RadMessageIcon.Question);
         }
         public static void showSaveMessage()
         {
-            MessageBox.Show("Record save successfully!", ProjectName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RadMessageBox.Show("Record save successfully!", ProjectName, MessageBoxButtons.OK, RadMessageIcon.Info);
         }
         public static void showDeleteMessage()
         {
-            MessageBox.Show("Record deleted successfully!", ProjectName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RadMessageBox.Show("Record deleted successfully!", ProjectName, MessageBoxButtons.OK, RadMessageIcon.Info);
         }
         public static DialogResult showAskDeleteMessage()
         {
-            return MessageBox.Show("Are you sure want to delete this record?", ProjectName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return RadMessageBox.Show("Are you sure want to delete this record?", ProjectName, MessageBoxButtons.YesNo, RadMessageIcon.Question);
         }
         public static DialogResult showAskExitMessage()
         {
-            return MessageBox.Show("Are you sure want to exit?", ProjectName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return RadMessageBox.Show("Are you sure want to exit?", ProjectName, MessageBoxButtons.YesNo, RadMessageIcon.Question);
         }
         public static DialogResult showAskDiscardMessage()
         {
-            return MessageBox.Show("Are you sure want to discard changes?", ProjectName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return RadMessageBox.Show("Are you sure want to discard changes?", ProjectName, MessageBoxButtons.YesNo, RadMessageIcon.Question);
         }
     }
 }

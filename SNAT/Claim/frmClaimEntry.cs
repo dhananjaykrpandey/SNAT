@@ -340,7 +340,7 @@ namespace SNAT.Document
                             }
                             else
                             {
-                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                             }
                         }
                     }
@@ -862,7 +862,7 @@ namespace SNAT.Document
 
         private void btnPickBeneficiry_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. ", MessageBoxIcon.Information); txtMemNationalId.Focus(); return; }
+            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. "); txtMemNationalId.Focus(); return; }
             try
             {
                 frmSearch frmsrch = new frmSearch();
@@ -1150,7 +1150,7 @@ namespace SNAT.Document
 
             try
             {
-                if (Convert.ToInt16(lblClaimStatusNo.Text.Trim().ToUpper()) > 1) { ClsMessage.showMessage("Claim record already posted!!" + Environment.NewLine + "Re-Posting cannot be possible.", MessageBoxIcon.Information); return; }
+                if (Convert.ToInt16(lblClaimStatusNo.Text.Trim().ToUpper()) > 1) { ClsMessage.showMessage("Claim record already posted!!" + Environment.NewLine + "Re-Posting cannot be possible."); return; }
                 if (dtClaimDocument == null || dtClaimDocument.DefaultView.Count <= 0) { ClsMessage.ProjectExceptionMessage("Claim supported document not uploaded!" + Environment.NewLine + "Please upload supported document."); return; }
                 if (ValidateSave() == false) { return; }
                 if (dtClaimDocument != null && dtClaimDocument.DefaultView.Count > 0)
@@ -1180,7 +1180,7 @@ namespace SNAT.Document
                 //ClsDataLayer.ExcuteTranstion(strSqlQuery, sqlTrans);
 
                 sqlTrans.Commit();
-                ClsMessage.showMessage("Claim record posted successfully!!", MessageBoxIcon.Information);
+                ClsMessage.showMessage("Claim record posted successfully!!");
                 ClsUtility.FormMode = ClsUtility.enmFormMode.NormalMode;
                 SetFormMode(ClsUtility.enmFormMode.NormalMode);
                 FillMemberData();
@@ -1272,7 +1272,7 @@ namespace SNAT.Document
         private void btnChildAdd_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. ", MessageBoxIcon.Information); txtMemNationalId.Focus(); return; }
+            if (string.IsNullOrEmpty(txtMemNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. "); txtMemNationalId.Focus(); return; }
             try
             {
                 frmSearch frmsrch = new frmSearch();

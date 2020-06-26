@@ -103,7 +103,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         txtNationalId.Focus();
                         txtMemberID.Text = "";
                         txtMemberName.Text = "";
@@ -240,7 +240,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         txtNationalId.Focus();
                         txtMemberID_BF.Text = "";
                         txtMemberName_BF.Text = "";

@@ -500,7 +500,7 @@ namespace SNAT.Member
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                         }
                     }
                 }
@@ -662,7 +662,7 @@ namespace SNAT.Member
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -1098,7 +1098,7 @@ namespace SNAT.Member
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

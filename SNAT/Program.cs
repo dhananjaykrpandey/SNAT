@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using SNAT.Comman_Classes;
+using Telerik.WinControls;
 
 namespace SNAT
 {
@@ -40,7 +41,7 @@ namespace SNAT
                 {
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    ClsMessage.showMessage("Database not set please contact system administrator.", MessageBoxIcon.Stop);
+                    ClsMessage.showMessage("Database not set please contact system administrator.", RadMessageIcon.Error);
                     Application.Exit();
                 }
             }

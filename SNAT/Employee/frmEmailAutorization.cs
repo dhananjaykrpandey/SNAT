@@ -245,7 +245,7 @@ namespace SNAT.Employee
             //                    }
             //                    else
             //                    {
-            //                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+            //                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
             //                    }
             //                }
             //            }
@@ -324,7 +324,7 @@ namespace SNAT.Employee
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

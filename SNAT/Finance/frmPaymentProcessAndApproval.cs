@@ -119,20 +119,20 @@ namespace SNAT.Finance
 
                 if (string.IsNullOrEmpty(txtMonth_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload month.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload month.");
                     txtMonth_Excel.Focus();
                     return false;
                 }
                 if (string.IsNullOrEmpty(txtYear_Excel.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please enter upload year.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter upload year.");
                     txtYear_Excel.Focus();
                     return false;
                 }
 
                 if (string.IsNullOrEmpty(txtYear_Excel.Text.Trim()) == false && Convert.ToInt32(txtYear_Excel.Text.Trim()) <= 1980)
                 {
-                    ClsMessage.showMessage("Year cannot be less than 1980.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Year cannot be less than 1980.");
                     txtYear_Excel.Focus();
                     return false;
                 }
@@ -141,7 +141,7 @@ namespace SNAT.Finance
 
                 if (!ClsUtility.IsValidDate(dDate))
                 {
-                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)");
                     txtYear_Excel.Focus();
                     return false;
                 }
@@ -264,7 +264,7 @@ namespace SNAT.Finance
                         sqlTran.Commit();
                         if (ClsDataLayer.dbConn.State == ConnectionState.Open) { ClsDataLayer.clsoeConnection(); }
 
-                        ClsMessage.showMessage("Process payment successfully!!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Process payment successfully!!");
                         FillMemberPayment(txtMonth_Excel.Text.Trim() + "-" + txtYear_Excel.Text.Trim());
                         FillWagesUpload(txtMonth_Excel.Text.Trim() + "-" + txtYear_Excel.Text.Trim());
                         FillList();
@@ -623,7 +623,7 @@ namespace SNAT.Finance
                         sqlTran.Commit();
                         if (ClsDataLayer.dbConn.State == ConnectionState.Open) { ClsDataLayer.clsoeConnection(); }
 
-                        ClsMessage.showMessage("Monthly Premium approved successfully!!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Monthly Premium approved successfully!!");
                         FillMemberPayment(txtMonth_Excel.Text.Trim() + "-" + txtYear_Excel.Text.Trim());
                         FillWagesUpload(txtMonth_Excel.Text.Trim() + "-" + txtYear_Excel.Text.Trim());
                         FillList();
@@ -705,12 +705,12 @@ namespace SNAT.Finance
                 if (dtWages != null && dtWages.DefaultView.Count > 0)
                 {
                     //dtWagesUpload.DefaultView.RowFilter = "IsNull(lApproved,0)=0 and cProcessed<>'A' ";
-                    //if (dtWagesUpload.DefaultView.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record", MessageBoxIcon.Information); return; }
+                    //if (dtWagesUpload.DefaultView.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record"); return; }
                     //dtWagesUpload.DefaultView.RowFilter = "";
                     if (((Button)(sender)).Name.ToUpper() == "BTNSELECTALL")
                     {
                         dtWages.DefaultView.RowFilter = "IsNull(lApproved,0)=0  and IsNull(lValidMemmber,0)=1 ";
-                        if (dtWages.DefaultView.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record", MessageBoxIcon.Information); dtWages.DefaultView.RowFilter = ""; return; }
+                        if (dtWages.DefaultView.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record"); dtWages.DefaultView.RowFilter = ""; return; }
                         foreach (DataRowView drvAppr in dtWages.DefaultView)
                         {
                             if ((drvAppr["lApproved"] != DBNull.Value) && (Convert.ToBoolean(drvAppr["lApproved"]) == false))
@@ -770,7 +770,7 @@ namespace SNAT.Finance
                     if (e.Column.Name.ToUpper() == "DCSELECT")
                     {
                         dvwg.RowFilter = "IsNull(lWpApproved,0)=0  and IsNull(lValidMemmber,0)=1";
-                        if (dvwg.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record", MessageBoxIcon.Information); dtWages.DefaultView.RowFilter = ""; return; }
+                        if (dvwg.Count <= 0) { ClsMessage.showMessage("All record approved , can not select approved record"); dtWages.DefaultView.RowFilter = ""; return; }
                         dtWages.DefaultView.RowFilter = "";
                         if (grdMemberPayemnt.CurrentRow.Index < 0) { return; }
                         if ((dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lValidMemmber"] != DBNull.Value) && (Convert.ToBoolean(dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lValidMemmber"]) == true))
@@ -787,7 +787,7 @@ namespace SNAT.Finance
 
                         if ((dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lWpApproved"] != DBNull.Value) && (Convert.ToBoolean(dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lWpApproved"]) == true))
                         {
-                            ClsMessage.showMessage("All record approved , can not select approved record", MessageBoxIcon.Information); 
+                            ClsMessage.showMessage("All record approved , can not select approved record"); 
                             dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index].BeginEdit();
                             dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lSelect"] = false;
                             //Convert.ToBoolean(dtWages.DefaultView[grdMemberPayemnt.CurrentRow.Index]["lSelect"]);

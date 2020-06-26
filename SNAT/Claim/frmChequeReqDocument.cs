@@ -156,7 +156,7 @@ namespace SNAT.Claim
                 if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_ChequeDocuments", "doccode", "doccode", txtCode.Text.Trim()) == true)
                 {
 
-                    ClsMessage.showMessage("Document already in use cannot delete!!.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Document already in use cannot delete!!.");
                     return false;
                 }
                 return true;
@@ -201,7 +201,7 @@ namespace SNAT.Claim
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                 }
                             }
                         }
@@ -232,7 +232,7 @@ namespace SNAT.Claim
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_ChequeDocType", "code", "code", txtCode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtCode, "Claim document code already exists.");
-                        ClsMessage.showMessage("Claim document code already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Claim document code already exists.");
                         return false;
                     }
                 }
@@ -246,7 +246,7 @@ namespace SNAT.Claim
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_ChequeDocType", "name", "name", txtName.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtName, "Claim document Name already exists.");
-                        ClsMessage.showMessage("Claim document Name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Claim document Name already exists.");
                         return false;
                     }
                 }
@@ -292,7 +292,7 @@ namespace SNAT.Claim
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

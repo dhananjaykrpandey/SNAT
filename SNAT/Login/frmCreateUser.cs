@@ -232,7 +232,7 @@ namespace SNAT.Document
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                 }
                             }
                         }
@@ -265,7 +265,7 @@ namespace SNAT.Document
                     if (ClsUtility.IsCodeValueExists("logintable", "username", "username", txtUserId.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtUserId, "User ID already exists.");
-                        ClsMessage.showMessage("User ID already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("User ID already exists.");
                         return false;
                     }
                 }
@@ -282,7 +282,7 @@ namespace SNAT.Document
 
                 if (txtpassword.Text.Trim().ToUpper() != txtconfirmpassword.Text.Trim().ToUpper())
                 {
-                    ClsMessage.showMessage("Confirm password does not match with password.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Confirm password does not match with password.");
                     errorProvider1.SetError(txtconfirmpassword, "Confirm password does not match with password.");
                     return false;
                 }
@@ -308,7 +308,7 @@ namespace SNAT.Document
                 }
                 if (string.IsNullOrEmpty(txtemail.Text.Trim()) == false && ClsUtility.IsValidEmail(txtemail.Text.Trim()) == false)
                 {
-                    //ClsMessage.showMessage("Invalid email id!!", MessageBoxIcon.Information);
+                    //ClsMessage.showMessage("Invalid email id!!");
                     errorProvider1.SetError(txtemail, "Invalid email id!!");
                     txtemail.Focus();
                     return false;
@@ -373,7 +373,7 @@ namespace SNAT.Document
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -597,7 +597,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid Employee #!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid Employee #!");
                         txtEmployeeNo.Focus();
                         txtEmployeeName.Text = "";
                         txtemail.Text = "";
@@ -674,7 +674,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid Member #!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid Member #!");
                         txtEmployeeNo.Focus();
                         txtEmployeeName.Text = "";
                         txtemail.Text = "";

@@ -180,7 +180,7 @@ namespace SNAT.Document
                                 }
                                 else
                                 {
-                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                    ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                                 }
                             }
                         }
@@ -211,7 +211,7 @@ namespace SNAT.Document
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_DocumentType", "code", "code", txtCode.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtCode, "Document code already exists.");
-                        ClsMessage.showMessage("Document code already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Document code already exists.");
                         return false;
                     }
                 }
@@ -225,7 +225,7 @@ namespace SNAT.Document
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.M_DocumentType", "name", "name", txtName.Text.Trim()) == true)
                     {
                         errorProvider1.SetError(txtName, "Document Name already exists.");
-                        ClsMessage.showMessage("Document Name already exists.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Document Name already exists.");
                         return false;
                     }
                 }
@@ -270,7 +270,7 @@ namespace SNAT.Document
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }

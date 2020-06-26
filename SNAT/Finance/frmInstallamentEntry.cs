@@ -357,7 +357,7 @@ namespace SNAT.Finance
                     }
                     else
                     {
-                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                     }
                     
                 }
@@ -391,7 +391,7 @@ namespace SNAT.Finance
 
                 if (!ClsUtility.IsValidDate(dDate))
                 {
-                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)");
                     txtYear.Focus();
                     return false;
                 }
@@ -401,7 +401,7 @@ namespace SNAT.Finance
                     if (lValidateWages() == false)
                     {
                         errorProvider1.SetError(txtWagesMonthYear, "Premium details are exists for this month.");
-                        ClsMessage.showMessage("Premium details are exists for this month.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Premium details are exists for this month.");
                         return false;
                     }
                 }
@@ -473,7 +473,7 @@ namespace SNAT.Finance
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -594,7 +594,7 @@ namespace SNAT.Finance
 
                     if (!ClsUtility.IsValidDate(dDate))
                     {
-                        ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Please enter correct month-year.(MM-YYYY)");
                         txtYear.Focus();
                         return;
                     }
@@ -823,7 +823,7 @@ namespace SNAT.Finance
                     }
                     else
                     {
-                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                     }
                 }
             }

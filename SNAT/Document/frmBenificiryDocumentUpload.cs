@@ -227,7 +227,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid member national id", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid member national id");
                         e.Cancel = true;
                         txtMemberID.Text = "";
                         txtMemberName.Text = "";
@@ -245,7 +245,7 @@ namespace SNAT.Document
 
         private void btnPickBeneficiry_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. ", MessageBoxIcon.Information); txtNationalId.Focus(); return; }
+            if (string.IsNullOrEmpty(txtNationalId.Text.Trim())) { ClsMessage.showMessage("Please select member national id. "); txtNationalId.Focus(); return; }
             try
             {
                 frmSearch frmsrch = new frmSearch();
@@ -287,7 +287,7 @@ namespace SNAT.Document
                     if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_Beneficiary", "beneficiarynatioanalid", "beneficiarynatioanalid", txtBeneficiryNationalId.Text.Trim(), txtBeneficiryName, "beneficiaryname") == false)
                     {
 
-                        ClsMessage.showMessage("Invalid beneficiary national id.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid beneficiary national id.");
                         txtBeneficiryName.Text = "";
                         e.Cancel = true;
                         return;
@@ -379,7 +379,7 @@ namespace SNAT.Document
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                         }
                     }
                 }
@@ -507,7 +507,7 @@ namespace SNAT.Document
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -652,7 +652,7 @@ namespace SNAT.Document
             {
                 if (string.IsNullOrEmpty(txtNationalId.Text.Trim()))
                 {
-                    ClsMessage.showMessage("Please select/enter member national id.", MessageBoxIcon.Information);
+                    ClsMessage.showMessage("Please select/enter member national id.");
                     txtNationalId.Focus();
                     return;
                 }
@@ -719,7 +719,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Please select document row to delete.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Please select document row to delete.");
                         return;
                     }
 

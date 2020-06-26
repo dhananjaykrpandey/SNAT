@@ -300,7 +300,7 @@ namespace SNAT.Employee
                         {
                             if (image.Width > 120 || image.Height > 120)
                             {
-                                ClsMessage.showMessage("Employee image max size(Height & Width) is 120 X 120", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Employee image max size(Height & Width) is 120 X 120");
 
                                 image = new Bitmap(Properties.Resources.img_not_available120X120);
                                 if (image != null)
@@ -415,7 +415,7 @@ namespace SNAT.Employee
                             }
                             else
                             {
-                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.", MessageBoxIcon.Information);
+                                ClsMessage.showMessage("Some problem occurs while deleting please contact system administrator.");
                             }
                         }
                     }
@@ -492,7 +492,7 @@ namespace SNAT.Employee
                 }
                 if (string.IsNullOrEmpty(txtEmail.Text.Trim()) == false && ClsUtility.IsValidEmail(txtEmail.Text.Trim()) == false)
                 {
-                    //ClsMessage.showMessage("Invalid email id!!", MessageBoxIcon.Information);
+                    //ClsMessage.showMessage("Invalid email id!!");
                     errorProvider1.SetError(txtEmail, "Invalid email id!!");
                     txtEmail.Focus();
                     return false;
@@ -632,7 +632,7 @@ namespace SNAT.Employee
                         }
                         else
                         {
-                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                         }
                     }
                 }
@@ -785,7 +785,7 @@ namespace SNAT.Employee
                     }
                     else
                     {
-                        ClsMessage.showMessage("Invalid Desgination!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Invalid Desgination!");
                         txtDesgCode.Focus();
                         txtDesgName.Text = "";
                         txtDeptCode.Text = "";
@@ -811,7 +811,7 @@ namespace SNAT.Employee
                     case "EMPLYEENO":
                         if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_EmployeeDetails", "employeeno", "employeeno", strValue) == true)
                         {
-                            ClsMessage.showMessage("Employee no already exists!", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Employee no already exists!");
                             txtEmployeeNo.Focus();
                             return false;
                         }
@@ -819,7 +819,7 @@ namespace SNAT.Employee
                     case "NATIONALID":
                         if (ClsUtility.IsCodeValueExists("SNAT.dbo.T_EmployeeDetails", "nationalid", "nationalid", strValue) == true)
                         {
-                            ClsMessage.showMessage("Employee national id already exists!", MessageBoxIcon.Information);
+                            ClsMessage.showMessage("Employee national id already exists!");
                             txtNationalId.Focus();
                             return false;
                         }

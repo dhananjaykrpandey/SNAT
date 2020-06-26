@@ -63,7 +63,7 @@ namespace SNAT.Document
                     int lResult = ClsDataLayer.UpdateData(strQuery);
                     if (lResult >0)
                     {
-                        ClsMessage.showMessage("User password reset successfully!!", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("User password reset successfully!!");
                         lblMessage.Visible = true;
                         lblPassword.Visible = true;
                         lblPassword.Text = txtpassword.Text.Trim();
@@ -71,7 +71,7 @@ namespace SNAT.Document
                     }
                     else
                     {
-                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.", MessageBoxIcon.Information);
+                        ClsMessage.showMessage("Some problem occurs while saving please contact system administrator.");
                        // ClsDataLayer.setLogAcitivity("Forgot Password", ClsSettings.username, "Resetting Password", "", "Some problem occurs while saving please contact system administrator.", "Msg");
 
                     }
