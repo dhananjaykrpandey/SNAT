@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
 namespace SNAT.Comman_Classes
 {
-   public static class ClsMessage
+    public static class ClsMessage
     {
         static readonly string   ProjectName =ClsSettings.ProjectName;
 
