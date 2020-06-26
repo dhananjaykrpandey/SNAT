@@ -815,11 +815,11 @@ namespace SNAT.Document
             try
             {
                 frmSearch frmsrch = new frmSearch();
-                frmsrch.infSqlSelectQuery = "SELECT    ted.id, ted.nationalid, ted.memberid, ted.employeeno, ted.tscno, ted.membername, ted.school, ted.contactno1," + Environment.NewLine +
+                frmsrch.infSqlSelectQuery = " SELECT ted.id, ted.nationalid, ted.memberid, ted.employeeno, ted.tscno, ted.membername, ted.school, ted.contactno1," + Environment.NewLine +
                                             " ted.residentaladdress, ted.nomineename,ms.name schoolname,ted.wagesamount,ted.nomineereleation," + Environment.NewLine +
                                             " CASE WHEN ISNULL(ted.nomineereleation,'')='R' then 6000 When ISNULL(ted.nomineereleation,'')='W' then 15000 else 0 End TotalAmount" + Environment.NewLine +
                                             " FROM SNAT.dbo.T_Member AS ted (nolock) LEFT OUTER JOIN SNAT.dbo.M_School ms (nolock) ON ms.code=ted.school ";
-                frmsrch.infSqlWhereCondtion = "";
+                frmsrch.infSqlWhereCondtion = " ted.livingstatus='L' AND ISNULL(ted.lActive,0)=1";
                 frmsrch.infSqlOrderBy = " nationalid , memberid , employeeno";
                 frmsrch.infMultiSelect = false;
                 frmsrch.infSearchFormName = "Search Member ....";
@@ -869,8 +869,9 @@ namespace SNAT.Document
                 frmsrch.infSqlSelectQuery = "SELECT membernationalid , memberid , membername , beneficiarynatioanalid , beneficiaryname , lstatus,residentaladrees,contactno1 " + Environment.NewLine +
                                             " ,CASE WHEN ISNULL(tb.nomineename,'')='' then tb.membername  else tb.nomineename End nomineename " + Environment.NewLine +
                                             " ,CASE WHEN ISNULL(tb.nomineenationalid,'')='' then tb.membernationalid  else tb.nomineenationalid End nomineenationalid,cast(6000 AS decimal(18,3))  TotalAmount" + Environment.NewLine +
-                                            " FROM SNAT.dbo.T_Beneficiary tb (nolock) ";
-                frmsrch.infSqlWhereCondtion = " membernationalid='" + txtMemNationalId.Text.Trim() + "'";
+                                            " FROM SNAT.dbo.T_Beneficiary tb (nolock) "+ Environment.NewLine  +
+                                            " INNER JOIN dbo.T_Member tm ON tm.nationalid=tb.membernationalid AND  tb.memberid = tm.memberid ";
+                frmsrch.infSqlWhereCondtion = " membernationalid='" + txtMemNationalId.Text.Trim() + "' AND ISNULL(tm.lActive,0)=1";
                 frmsrch.infSqlOrderBy = " membernationalid , beneficiarynatioanalid ";
                 frmsrch.infMultiSelect = false;
                 frmsrch.infSearchFormName = "Search Member ....";

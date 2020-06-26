@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNAT", "SNAT\SNAT.csproj", "{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}"
 EndProject
@@ -19,13 +19,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dhananjaykrpandey.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SNAT\\SNAT.csproj
-		SccProjectName1 = SNAT
-		SccLocalPath1 = SNAT
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66D0586D-2985-4BEA-9535-43D7CC5139CE}
 	EndGlobalSection
 EndGlobal

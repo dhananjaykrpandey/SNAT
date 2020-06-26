@@ -33,6 +33,15 @@
             this.crViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.BtnPrint = new System.Windows.Forms.ToolStripDropDownButton();
+            this.BtnPrintDefault = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnPrintDilog = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnSave = new System.Windows.Forms.ToolStripDropDownButton();
+            this.BtnSavePdf = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnSaveExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnSaveExcelUnFormated = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -41,15 +50,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excelUnFormatedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.printDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDilogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,10 @@
             this.crViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crViewer.Location = new System.Drawing.Point(0, 0);
             this.crViewer.Name = "crViewer";
+            this.crViewer.ShowCloseButton = false;
+            this.crViewer.ShowCopyButton = false;
             this.crViewer.ShowGroupTreeButton = false;
+            this.crViewer.ShowLogo = false;
             this.crViewer.ShowParameterPanelButton = false;
             this.crViewer.Size = new System.Drawing.Size(539, 404);
             this.crViewer.TabIndex = 0;
@@ -75,9 +80,9 @@
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton2,
+            this.BtnPrint,
             this.toolStripSeparator1,
-            this.toolStripDropDownButton1,
+            this.BtnSave,
             this.toolStripSeparator2,
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -87,7 +92,9 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
+            this.bindingNavigatorSeparator2,
+            this.toolStripButton1,
+            this.toolStripComboBox1});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -95,7 +102,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(279, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(425, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -105,6 +112,76 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnPrint.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnPrintDefault,
+            this.BtnPrintDilog});
+            this.BtnPrint.Image = global::SNAT.Properties.Resources.printer1;
+            this.BtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(29, 22);
+            this.BtnPrint.Text = "toolStripDropDownButton2";
+            // 
+            // BtnPrintDefault
+            // 
+            this.BtnPrintDefault.Image = global::SNAT.Properties.Resources.Icon_Printer02_Black;
+            this.BtnPrintDefault.Name = "BtnPrintDefault";
+            this.BtnPrintDefault.Size = new System.Drawing.Size(180, 22);
+            this.BtnPrintDefault.Text = "Print Default";
+            // 
+            // BtnPrintDilog
+            // 
+            this.BtnPrintDilog.Image = global::SNAT.Properties.Resources.process;
+            this.BtnPrintDilog.Name = "BtnPrintDilog";
+            this.BtnPrintDilog.Size = new System.Drawing.Size(180, 22);
+            this.BtnPrintDilog.Text = "Print Dilog";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnSavePdf,
+            this.BtnSaveExcel,
+            this.BtnSaveExcelUnFormated});
+            this.BtnSave.Image = global::SNAT.Properties.Resources.Save_icon;
+            this.BtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(29, 22);
+            this.BtnSave.Text = "toolStripDropDownButton1";
+            // 
+            // BtnSavePdf
+            // 
+            this.BtnSavePdf.Image = global::SNAT.Properties.Resources.pdf;
+            this.BtnSavePdf.Name = "BtnSavePdf";
+            this.BtnSavePdf.Size = new System.Drawing.Size(180, 22);
+            this.BtnSavePdf.Text = "PDF";
+            // 
+            // BtnSaveExcel
+            // 
+            this.BtnSaveExcel.Image = global::SNAT.Properties.Resources.Excel;
+            this.BtnSaveExcel.Name = "BtnSaveExcel";
+            this.BtnSaveExcel.Size = new System.Drawing.Size(180, 22);
+            this.BtnSaveExcel.Text = "Excel";
+            // 
+            // BtnSaveExcelUnFormated
+            // 
+            this.BtnSaveExcelUnFormated.Image = global::SNAT.Properties.Resources.tb_ExcelExport;
+            this.BtnSaveExcelUnFormated.Name = "BtnSaveExcelUnFormated";
+            this.BtnSaveExcelUnFormated.Size = new System.Drawing.Size(180, 22);
+            this.BtnSaveExcelUnFormated.Text = "Excel Un-Formated";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -133,6 +210,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -166,75 +244,19 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripDropDownButton1
+            // toolStripButton1
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pDFToolStripMenuItem,
-            this.excelToolStripMenuItem,
-            this.excelUnFormatedToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::SNAT.Properties.Resources.Save_icon;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::SNAT.Properties.Resources.EasyFind;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // pDFToolStripMenuItem
+            // toolStripComboBox1
             // 
-            this.pDFToolStripMenuItem.Image = global::SNAT.Properties.Resources.pdf;
-            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.pDFToolStripMenuItem.Text = "PDF";
-            // 
-            // excelToolStripMenuItem
-            // 
-            this.excelToolStripMenuItem.Image = global::SNAT.Properties.Resources.Excel;
-            this.excelToolStripMenuItem.Name = "excelToolStripMenuItem";
-            this.excelToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.excelToolStripMenuItem.Text = "Excel";
-            // 
-            // excelUnFormatedToolStripMenuItem
-            // 
-            this.excelUnFormatedToolStripMenuItem.Image = global::SNAT.Properties.Resources.tb_ExcelExport;
-            this.excelUnFormatedToolStripMenuItem.Name = "excelUnFormatedToolStripMenuItem";
-            this.excelUnFormatedToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.excelUnFormatedToolStripMenuItem.Text = "Excel Un-Formated";
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printDefaultToolStripMenuItem,
-            this.printDilogToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = global::SNAT.Properties.Resources.printer1;
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
-            // 
-            // printDefaultToolStripMenuItem
-            // 
-            this.printDefaultToolStripMenuItem.Image = global::SNAT.Properties.Resources.Icon_Printer02_Black;
-            this.printDefaultToolStripMenuItem.Name = "printDefaultToolStripMenuItem";
-            this.printDefaultToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printDefaultToolStripMenuItem.Text = "Print Default";
-            // 
-            // printDilogToolStripMenuItem
-            // 
-            this.printDilogToolStripMenuItem.Image = global::SNAT.Properties.Resources.process;
-            this.printDilogToolStripMenuItem.Name = "printDilogToolStripMenuItem";
-            this.printDilogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printDilogToolStripMenuItem.Text = "Print Dilog";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
             // 
             // frmReportViewer
             // 
@@ -267,14 +289,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excelUnFormatedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem printDefaultToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem printDilogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton BtnSave;
+        private System.Windows.Forms.ToolStripMenuItem BtnSavePdf;
+        private System.Windows.Forms.ToolStripMenuItem BtnSaveExcel;
+        private System.Windows.Forms.ToolStripMenuItem BtnSaveExcelUnFormated;
+        private System.Windows.Forms.ToolStripDropDownButton BtnPrint;
+        private System.Windows.Forms.ToolStripMenuItem BtnPrintDefault;
+        private System.Windows.Forms.ToolStripMenuItem BtnPrintDilog;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
     }
 }

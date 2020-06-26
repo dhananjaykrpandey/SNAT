@@ -1063,8 +1063,8 @@ namespace SNAT.Comman_Form
             try
             {
                 GridViewSpreadExport spreadExporter = new GridViewSpreadExport(this.D_grdMemberDetails);
-                //SpreadExportRenderer exportRenderer = new SpreadExportRenderer();
-                spreadExporter.RunExport("D:\\exportedFile.xlsx");
+                SpreadExportRenderer spreadExportRenderer = new SpreadExportRenderer();
+                spreadExporter.RunExport("D:\\exportedFile.xlsx", spreadExportRenderer);
             }
             catch (Exception ex)
             {

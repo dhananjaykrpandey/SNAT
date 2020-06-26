@@ -59,7 +59,7 @@ namespace SNAT
                 }
                 if ((!string.IsNullOrEmpty(e.Node.Text) && e.Node.Text != "") && (e.Node.Text.ToUpper() == "LOG OUT & EXIST"))
                 {
-                   
+
                     DialogResult dgRsult = MessageBox.Show(this, "Do you want exit or log out?" + Environment.NewLine + "Click Yes for exit No for Log Out.", ClsSettings.ProjectName, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
                     switch (dgRsult)
                     {

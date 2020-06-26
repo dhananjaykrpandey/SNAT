@@ -554,7 +554,8 @@ namespace SNAT.Comman_Form
                                       " tdp.wagesamount dumpwagesamount, MM.id,  MM.nationalid,  MM.memberid,  MM.employeeno,  MM.tscno," + Environment.NewLine +
                                       " MM.membername,ISNULL(MM.wagesamount,0) wagesamount,  MM.wageseffectivedete , CAST(CASE WHEN ISNULL(MM.memberid,'')='' THEN 0 ELSE 1 END AS bit) lValidMember" + Environment.NewLine +
                                       " FROM SNAT.dbo.T_Dump_PSPF tdp " + Environment.NewLine +
-                                      " LEFT OUTER JOIN  SNAT.dbo.T_Member MM (nolock) ON mm."+ strLinkOn + "=tdp.memberid AND mm.livingstatus='L'  Order By tdp.id";
+                                      " INNER JOIN  SNAT.dbo.T_Member MM (nolock) ON mm."+ strLinkOn + "=tdp.memberid " + Environment.NewLine +
+                                      " Where mm.livingstatus='L'  AND ISNULL(mm.lActive,0)=1 Order By tdp.id";
                         //mm.memberid=tdp.memberid 
                         dtExcelData = ClsDataLayer.GetDataTable(strSqlQuery);
                         break;
@@ -563,11 +564,12 @@ namespace SNAT.Comman_Form
                                      " tdp.wagesamount dumpwagesamount, MM.id,  MM.nationalid,  MM.memberid,  MM.employeeno,  MM.tscno," + Environment.NewLine +
                                      " MM.membername,ISNULL(MM.wagesamount,0) wagesamount,  MM.wageseffectivedete , CAST(CASE WHEN ISNULL(MM.memberid,'')='' THEN 0 ELSE 1 END AS bit) lValidMember" + Environment.NewLine +
                                      " FROM SNAT.dbo.T_Dump_Treasury tdp " + Environment.NewLine +
-                                     " LEFT OUTER JOIN  SNAT.dbo.T_Member MM (nolock) ON mm." + strLinkOn + "=tdp.employeeno AND mm.livingstatus='L'  Order By tdp.id";
+                                     " INNER JOIN  SNAT.dbo.T_Member MM (nolock) ON mm." + strLinkOn + "=tdp.employeeno " + Environment.NewLine +
+                                     " Where mm.livingstatus='L' AND ISNULL(mm.lActive,0)=1  Order By tdp.id";
                         //mm.memberid=tdp.memberid 
                         dtExcelData = ClsDataLayer.GetDataTable(strSqlQuery);
                         break;
-                        break;
+                      
                 }
             }
             catch (Exception ex)

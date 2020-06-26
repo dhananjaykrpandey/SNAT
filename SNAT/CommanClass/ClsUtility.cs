@@ -6,7 +6,7 @@ using SNAT.Comman_Classes;
 using System.Data;
 using System.Text.RegularExpressions;
 using System.IO;
-using Telerik.Windows.Pdf.Documents.Model.Drawing.Shapes;
+//using Telerik.Windows.Pdf.Documents.Model.Drawing.Shapes;
 using System.Net;
 using SNAT.Comman_Form;
 using System.Collections.Generic;

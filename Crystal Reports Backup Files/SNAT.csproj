@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5C630FB-5D41-4E0D-8EAC-4C9A75DADE0B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SNAT</RootNamespace>
+    <AssemblyName>SNAT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\tandla.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="TelerikCommon, Version=2020.2.512.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Debug\Reports\rptChequeRequistionDetails_List.cs">
+      <DependentUpon>rptChequeRequistionDetails_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptChequeRequistionDetails.cs">
+      <DependentUpon>rptChequeRequistionDetails.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptClaimDetails_List.cs">
+      <DependentUpon>rptClaimDetails_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptClaimDetails.cs">
+      <DependentUpon>rptClaimDetails.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptBeneficiary_List.cs">
+      <DependentUpon>rptBeneficiary_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptChequeApproval.cs">
+      <DependentUpon>rptChequeApproval.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptInvoic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInvoic.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptLetPerson.cs">
+      <DependentUpon>rptLetPerson.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptChequeRequisiton.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptChequeRequisiton.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptHeader.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHeader.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptBeneficiary.cs">
+      <DependentUpon>rptBeneficiary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptLetMember_List.cs">
+      <DependentUpon>rptLetMember_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptLetMember.cs">
+      <DependentUpon>rptLetMember.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptMember_List.cs">
+      <DependentUpon>rptMember_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptMember.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMember.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptPremiumnUploadDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPremiumnUploadDetails.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptPremiumProcessDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPremiumProcessDetails.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\Reports\rptTotalPremiumDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTotalPremiumDetails.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmChequeRequisition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmChequeRequisition.Designer.cs">
+      <DependentUpon>frmChequeRequisition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmChequeReqDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmChequeReqDocument.Designer.cs">
+      <DependentUpon>frmChequeReqDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmClaimDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmClaimDocument.Designer.cs">
+      <DependentUpon>frmClaimDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmImportExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmImportExcel.Designer.cs">
+      <DependentUpon>frmImportExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmMainMdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmMainMdi.Designer.cs">
+      <DependentUpon>frmMainMdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmSchool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmSchool.Designer.cs">
+      <DependentUpon>frmSchool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comman Form\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comman Form\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommanClass\clsCheckValue.cs" />
+    <Compile Include="CommanClass\ClsDataLayer.cs" />
+    <Compile Include="CommanClass\clsEmail.cs" />
+    <Compile Include="CommanClass\clsFromDetails.cs" />
+    <Compile Include="CommanClass\clsMenu.cs" />
+    <Compile Include="CommanClass\clsMenu_old.cs" />
+    <Compile Include="CommanClass\ClsMessage.cs" />
+    <Compile Include="CommanClass\clsSendSMS.cs" />
+    <Compile Include="CommanClass\ClsSettings.cs" />
+    <Compile Include="CommanClass\ClsSqlQuery.cs" />
+    <Compile Include="CommanClass\ClsUtility.cs" />
+    <Compile Include="CommanClass\CryptorEngine.cs" />
+    <Compile Include="Document\frmFinanceDocumentUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Document\frmFinanceDocumentUpload.Designer.cs">
+      <DependentUpon>frmFinanceDocumentUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\frmBenificiryDocumentUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Document\frmBenificiryDocumentUpload.Designer.cs">
+      <DependentUpon>frmBenificiryDocumentUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmDesgination.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmDesgination.Designer.cs">
+      <DependentUpon>frmDesgination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmailAutorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmailAutorization.Designer.cs">
+      <DependentUpon>frmEmailAutorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\frmEmployeeRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\frmEmployeeRegister.Designer.cs">
+      <DependentUpon>frmEmployeeRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmBeneficiryInstallmentEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmBeneficiryInstallmentEntry.Designer.cs">
+      <DependentUpon>frmBeneficiryInstallmentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmFinanceRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmFinanceRegister.Designer.cs">
+      <DependentUpon>frmFinanceRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmInstallamentEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmInstallamentEntry.Designer.cs">
+      <DependentUpon>frmInstallamentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmPaymentProcessAndApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmPaymentProcessAndApproval.Designer.cs">
+      <DependentUpon>frmPaymentProcessAndApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finance\frmReconciliation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finance\frmReconciliation.Designer.cs">
+      <DependentUpon>frmReconciliation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmClaimAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmClaimAction.Designer.cs">
+      <DependentUpon>frmClaimAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmClaimEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmClaimEntry.Designer.cs">
+      <DependentUpon>frmClaimEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claim\frmClaimRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claim\frmClaimRegister.Designer.cs">
+      <DependentUpon>frmClaimRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmCreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmCreateUser.Designer.cs">
+      <DependentUpon>frmCreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\frmDocumentRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Document\frmDocumentRegister.Designer.cs">
+      <DependentUpon>frmDocumentRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\frmDocumentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Document\frmDocumentType.Designer.cs">
+      <DependentUpon>frmDocumentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\frmMemberDocumentUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Document\frmMemberDocumentUpload.Designer.cs">
+      <DependentUpon>frmMemberDocumentUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmForgetPassword.Designer.cs">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmUserRight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmUserRight.Designer.cs">
+      <DependentUpon>frmUserRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\ClsLogin.cs" />
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member\frmBeneficiary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Member\frmBeneficiary.Designer.cs">
+      <DependentUpon>frmBeneficiary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member\frmMemberEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Member\frmMemberEntry.Designer.cs">
+      <DependentUpon>frmMemberEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member\frmMemberRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Member\frmMemberRegister.Designer.cs">
+      <DependentUpon>frmMemberRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member\frmWagesChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Member\frmWagesChange.Designer.cs">
+      <DependentUpon>frmWagesChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="bin\Debug\Reports\rptChequeRequistionDetails_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChequeRequistionDetails_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptChequeRequistionDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChequeRequistionDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptClaimDetails_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClaimDetails_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptClaimDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClaimDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptBeneficiary_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBeneficiary_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptChequeApproval.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChequeApproval.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptInvoic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptLetPerson.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLetPerson.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptChequeRequisiton.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChequeRequisiton.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptHeader.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHeader.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptBeneficiary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBeneficiary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptLetMember_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLetMember_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptLetMember.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLetMember.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptMember_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMember_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptMember.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMember.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptPremiumnUploadDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPremiumnUploadDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptPremiumProcessDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPremiumProcessDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reports\rptTotalPremiumDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTotalPremiumDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claim\frmChequeRequisition.resx">
+      <DependentUpon>frmChequeRequisition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claim\frmChequeReqDocument.resx">
+      <DependentUpon>frmChequeReqDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claim\frmClaimDocument.resx">
+      <DependentUpon>frmClaimDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claim\frmClaimEntry.resx">
+      <DependentUpon>frmClaimEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claim\frmClaimRegister.resx">
+      <DependentUpon>frmClaimRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmImportExcel.resx">
+      <DependentUpon>frmImportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmMainMdi.resx">
+      <DependentUpon>frmMainMdi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmSchool.resx">
+      <DependentUpon>frmSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comman Form\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmDocumentRegister.resx">
+      <DependentUpon>frmDocumentRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmDocumentType.resx">
+      <DependentUpon>frmDocumentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmFinanceDocumentUpload.resx">
+      <DependentUpon>frmFinanceDocumentUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmBenificiryDocumentUpload.resx">
+      <DependentUpon>frmBenificiryDocumentUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmMemberDocumentUpload.resx">
+      <DependentUpon>frmMemberDocumentUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmDesgination.resx">
+      <DependentUpon>frmDesgination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmailAutorization.resx">
+      <DependentUpon>frmEmailAutorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\frmEmployeeRegister.resx">
+      <DependentUpon>frmEmployeeRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmBeneficiryInstallmentEntry.resx">
+      <DependentUpon>frmBeneficiryInstallmentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmFinanceRegister.resx">
+      <DependentUpon>frmFinanceRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmInstallamentEntry.resx">
+      <DependentUpon>frmInstallamentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finance\frmPaymentProcessAndApproval.resx">
+      <DependentUpon>frmPaymentProcessAndApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmCreateUser.resx">
+      <DependentUpon>frmCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmForgetPassword.resx">
+      <DependentUpon>frmForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmUserRight.resx">
+      <DependentUpon>frmUserRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Member\frmBeneficiary.resx">
+      <DependentUpon>frmBeneficiary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Member\frmMemberEntry.resx">
+      <DependentUpon>frmMemberEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Member\frmMemberRegister.resx">
+      <DependentUpon>frmMemberRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Member\frmWagesChange.resx">
+      <DependentUpon>frmWagesChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Project_Document\Error&amp;Suggestion.docx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel1.png" />
+    <None Include="Resources\pdf_2.png" />
+    <None Include="Resources\pdf.png" />
+    <None Include="Resources\Excel.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Image\approved.png" />
+    <None Include="Image\approved2.png" />
+    <None Include="Image\Accept.png" />
+    <Content Include="bin\Debug\Reports\rptChequeRequisition.xml" />
+    <Content Include="bin\Debug\Reports\rptClaimDetails.xml" />
+    <Content Include="bin\Debug\Reports\rptMember.xml" />
+    <Content Include="Image\carshowrooms.jpg" />
+    <Content Include="Image\carshowrooms.png" />
+    <Content Include="Image\category.png" />
+    <None Include="Resources\process1.png" />
+    <None Include="Resources\process.png" />
+    <None Include="Resources\tandla.ico" />
+    <None Include="Resources\EasyFind.png" />
+    <None Include="Resources\picker1.png" />
+    <None Include="Resources\img_not_available120X120.png" />
+    <None Include="Resources\db_import.png" />
+    <None Include="Resources\checkbox_unchecked.png" />
+    <None Include="Resources\checkbox_checked.png" />
+    <None Include="Resources\picker.png" />
+    <None Include="Image\tb_ExcelExport.png" />
+    <None Include="Image\delete-icon.png" />
+    <Content Include="Image\Exit_New.png" />
+    <Content Include="Image\expcat.png" />
+    <None Include="Image\icon_add_blue.gif" />
+    <None Include="Image\icon_importWizard.png" />
+    <None Include="Image\Filter.png" />
+    <Content Include="Image\images.jpg" />
+    <None Include="Image\import.gif" />
+    <None Include="Image\lock.png" />
+    <Content Include="Image\login.png" />
+    <Content Include="Image\loginbackground.jpg" />
+    <None Include="Image\searchbutton.png" />
+    <None Include="Image\old-edit-undo.png" />
+    <None Include="Image\Recall.png" />
+    <None Include="Image\Reject.png" />
+    <Content Include="Image\service.png" />
+    <None Include="Resources\Undo-icon.png" />
+    <None Include="Resources\sharp_folder.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\Save-icon.png" />
+    <None Include="Resources\printer1.png" />
+    <None Include="Resources\picklist.jpg" />
+    <None Include="Resources\pervious.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\Log Out.png" />
+    <None Include="Resources\last.png" />
+    <None Include="Resources\img_not_available.png" />
+    <None Include="Resources\igdd_DropDownButton.png" />
+    <None Include="Resources\Icon-Printer02-Black.png" />
+    <None Include="Resources\first.png" />
+    <None Include="Resources\file_edit.png" />
+    <None Include="Resources\file_add.png" />
+    <None Include="Resources\delete logo icon.png" />
+    <None Include="Resources\button_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataBackup\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

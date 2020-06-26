@@ -31,10 +31,11 @@ namespace SNAT.Member
         {
             try
             {
-                strSqlQuery = "SELECT mb.id,mb.nationalid,mb.memberid ,mb.employeeno ,mb.tscno ,mb.membername ,mb.dob ,mb.sex ,mb.school,ms.name schoolname " +
-                                " ,mb.contactno1 ,mb.contactno2 ,mb.residentaladdress ,mb.nomineenationalid ,mb.nomineename ,mb.wagesamount ,mb.wageseffectivedete" +
-                                " ,mb.imagelocation ,mb.createdby ,mb.createddate ,mb.updateby ,mb.updateddate,mb.email,mb.nomineereleation,mb.livingstatus," +
-                                " mb.deathdate, mb.mritalstatus , mb.suposenationaid , mb.suposename , mb.suposegender , mb.suposejoindate FROM SNAT.dbo.T_Member mb (nolock)" +
+                strSqlQuery = "SELECT mb.id,mb.nationalid,mb.memberid ,mb.employeeno ,mb.tscno ,mb.membername ,mb.dob ,mb.sex ,mb.school,ms.name schoolname " + Environment.NewLine +
+                               " ,mb.contactno1 ,mb.contactno2 ,mb.residentaladdress ,mb.nomineenationalid ,mb.nomineename ,mb.wagesamount ,mb.wageseffectivedete" + Environment.NewLine +
+                                " ,mb.imagelocation ,mb.createdby ,mb.createddate ,mb.updateby ,mb.updateddate,mb.email,mb.cWorkingStatus,mb.livingstatus," + Environment.NewLine +
+                                " mb.deathdate, mb.mritalstatus , mb.suposenationaid , mb.suposename , mb.suposegender , mb.suposejoindate,CASE WHEN ISNULL(mb.lActive,0)=0 THEN 'Member Active Status : IN-Active' ELSE 'Member Active Status : Active' END cActive,mb.lActive " + Environment.NewLine +
+                                " FROM SNAT.dbo.T_Member mb (nolock)" + Environment.NewLine +
                                 " LEFT OUTER JOIN SNAT.dbo.M_School ms (nolock) ON ms.code=mb.school order by mb.nationalid,mb.memberid ,mb.employeeno";
                 dtMemberEntery = ClsDataLayer.GetDataTable(strSqlQuery);
                 bsMemmberEntery.DataSource = dtMemberEntery.DefaultView;
@@ -73,7 +74,7 @@ namespace SNAT.Member
 
                 dtpDeathDate.DataBindings.Add("Text", bsMemmberEntery, "deathdate", false, DataSourceUpdateMode.OnPropertyChanged);
                 txtLivingStatus.DataBindings.Add("Text", bsMemmberEntery, "livingstatus", false, DataSourceUpdateMode.OnPropertyChanged);
-                txtNonmineeRelection.DataBindings.Add("Text", bsMemmberEntery, "nomineereleation", false, DataSourceUpdateMode.OnPropertyChanged);
+                txtWorkingStatus.DataBindings.Add("Text", bsMemmberEntery, "cWorkingStatus", false, DataSourceUpdateMode.OnPropertyChanged);
 
 
                 txtMritalStatus.DataBindings.Add("Text", bsMemmberEntery, "mritalstatus", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -82,7 +83,7 @@ namespace SNAT.Member
                 dtpSuposeJoinDate.DataBindings.Add("Text", bsMemmberEntery, "suposejoindate", false, DataSourceUpdateMode.OnPropertyChanged);
                 txtsupouseName.DataBindings.Add("Text", bsMemmberEntery, "suposename", false, DataSourceUpdateMode.OnPropertyChanged);
                 txtSpouseGender.DataBindings.Add("Text", bsMemmberEntery, "suposegender", false, DataSourceUpdateMode.OnPropertyChanged);
-
+                lblActiveStatus.DataBindings.Add("Text", bsMemmberEntery, "cActive", false, DataSourceUpdateMode.OnPropertyChanged);
 
                 grdList.DataSource = bsMemmberEntery;
 
@@ -114,8 +115,8 @@ namespace SNAT.Member
             dtpWagesEffectiveDate.Enabled = lValue;
             btnselectpicture.Enabled = lValue;
             txtemailid.Enabled = lValue;
-            rbWife.Enabled = lValue;
-            rbOthers.Enabled = lValue;
+            rbWorking.Enabled = lValue;
+            rbRetired.Enabled = lValue;
             rbLiving.Enabled = lValue;
             rbDead.Enabled = lValue;
             dtpDeathDate.Enabled = lValue;
@@ -640,22 +641,24 @@ namespace SNAT.Member
 
                         }
                     }
-                    if (rbWife.Checked == true)
+                    if (rbWorking.Checked == true)
                     {
-                        dtMemberEntery.DefaultView[iRow]["nomineereleation"] = "W";
+                        dtMemberEntery.DefaultView[iRow]["cWorkingStatus"] = "W";
                     }
-                    if (rbOthers.Checked == true)
+                    if (rbRetired.Checked == true)
                     {
-                        dtMemberEntery.DefaultView[iRow]["nomineereleation"] = "O";
+                        dtMemberEntery.DefaultView[iRow]["cWorkingStatus"] = "R";
                     }
 
                     if (rbLiving.Checked == true)
                     {
                         dtMemberEntery.DefaultView[iRow]["livingstatus"] = "L";
+                        dtMemberEntery.DefaultView[iRow]["lActive"] = true;
                     }
                     if (rbDead.Checked == true)
                     {
                         dtMemberEntery.DefaultView[iRow]["livingstatus"] = "D";
+
                     }
 
                     if (string.IsNullOrEmpty(dtpDeathDate.Value.ToShortDateString().Trim()) == false && dtpDeathDate.Value.ToShortDateString().Trim() != "01/01/0001")
@@ -719,7 +722,7 @@ namespace SNAT.Member
                     {
 
                         bool lReturn = false;
-                        strSqlQuery = "SELECT id , nationalid , memberid , employeeno , tscno , membername , dob , sex , school , contactno1 , contactno2 , residentaladdress , nomineenationalid , nomineename , wagesamount , wageseffectivedete , imagelocation , createdby , createddate , updateby , updateddate,email,nomineereleation,livingstatus,deathdate, mritalstatus , suposenationaid , suposename , suposegender , suposejoindate FROM SNAT.dbo.T_Member (nolock) WHERE 1=2";
+                        strSqlQuery = "SELECT id , nationalid , memberid , employeeno , tscno , membername , dob , sex , school , contactno1 , contactno2 , residentaladdress , nomineenationalid , nomineename , wagesamount , wageseffectivedete , imagelocation , createdby , createddate , updateby , updateddate,email,cWorkingStatus,livingstatus,deathdate, mritalstatus , suposenationaid , suposename , suposegender , suposejoindate,lActive FROM SNAT.dbo.T_Member (nolock) WHERE 1=2";
 
                         iRow = bsMemmberEntery.Position;
                         dtMemberEntery.DefaultView[iRow].BeginEdit();
@@ -1049,14 +1052,14 @@ namespace SNAT.Member
         {
             try
             {
-                if (rbWife.Checked)
+                if (rbWorking.Checked)
                 {
-                    txtNonmineeRelection.Text = "W";
+                    txtWorkingStatus.Text = "W";
 
                 }
-                if (rbOthers.Checked)
+                if (rbRetired.Checked)
                 {
-                    txtNonmineeRelection.Text = "O";
+                    txtWorkingStatus.Text = "R";
 
                 }
             }
@@ -1093,15 +1096,15 @@ namespace SNAT.Member
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtNonmineeRelection.Text.Trim()))
+                if (!string.IsNullOrEmpty(txtWorkingStatus.Text.Trim()))
                 {
-                    if (txtNonmineeRelection.Text.Trim() == "W")
+                    if (txtWorkingStatus.Text.Trim() == "W")
                     {
-                        rbWife.Checked = true;
+                        rbWorking.Checked = true;
                     }
-                    if (txtNonmineeRelection.Text.Trim() == "O")
+                    if (txtWorkingStatus.Text.Trim() == "R")
                     {
-                        rbOthers.Checked = true;
+                        rbRetired.Checked = true;
                     }
 
                 }
@@ -1153,7 +1156,7 @@ namespace SNAT.Member
                     if (rbSingle.Checked)
                     {
                         txtMritalStatus.Text = "S";
-                       txtsupouseNationalId.Enabled = false;
+                        txtsupouseNationalId.Enabled = false;
                         txtsupouseNationalId.Text = "";
                         txtsupouseName.Enabled = false;
                         txtsupouseName.Text = "";
@@ -1168,12 +1171,10 @@ namespace SNAT.Member
                         /************************/
                         txtNomineeNationalId.Enabled = true;
                         txtNomineeName.Enabled = true;
-                        rbWife.Enabled = true;
-                       rbOthers.Enabled = true;
+
                         txtNomineeNationalId.Text = "";
                         txtNomineeNationalId.Text = "";
-                        rbWife.Checked = false;
-                        rbOthers.Checked = false;
+
                         //txtWagesAmount.Text = "50";
                         txtWagesAmount.Text = "60";
 
@@ -1197,12 +1198,10 @@ namespace SNAT.Member
                         /************************/
                         txtNomineeNationalId.Enabled = true;
                         txtNomineeName.Enabled = true;
-                        rbWife.Enabled = false;
-                        rbOthers.Enabled = false;
+
                         txtNomineeNationalId.Text = "";
                         txtNomineeNationalId.Text = "";
-                        rbWife.Checked = true;
-                        rbOthers.Checked = false;
+
 
                         //txtWagesAmount.Text = "63";
                         txtWagesAmount.Text = "73";
@@ -1337,6 +1336,35 @@ namespace SNAT.Member
             FillMemberData();
         }
 
-      
+        private void lblActiveStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdList_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtMemberEntery != null && dtMemberEntery.DefaultView.Count > 0)
+                {
+                    int iRow = bsMemmberEntery.Position;
+                    bool lAcive = false;
+                    lAcive = dtMemberEntery.DefaultView[iRow]["lActive"] == DBNull.Value ? false : Convert.ToBoolean(dtMemberEntery.DefaultView[iRow]["lActive"]);
+                    if(lAcive==true)
+                    {
+                        lblActiveStatus.ForeColor = Color.DarkGreen;
+                    }
+                    else
+                    {
+                        lblActiveStatus.ForeColor = Color.Red;
+                    }
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                ClsMessage.ProjectExceptionMessage(ex);
+            }
+        }
     }
 }

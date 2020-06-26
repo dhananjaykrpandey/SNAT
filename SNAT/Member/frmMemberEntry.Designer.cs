@@ -26,19 +26,19 @@
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMemberEntry));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tbpDetails = new System.Windows.Forms.TabPage();
             this.txtResidentalAddress = new Telerik.WinControls.UI.RadTextBox();
             this.txtMritalStatus = new System.Windows.Forms.TextBox();
-            this.txtNonmineeRelection = new System.Windows.Forms.TextBox();
+            this.txtWorkingStatus = new System.Windows.Forms.TextBox();
             this.txtLivingStatus = new System.Windows.Forms.TextBox();
             this.txtSpouseGender = new System.Windows.Forms.TextBox();
             this.dtpSuposeJoinDate = new Telerik.WinControls.UI.RadDateTimePicker();
@@ -46,7 +46,6 @@
             this.pnlSupposeGender = new System.Windows.Forms.Panel();
             this.rbSpouseFemale = new System.Windows.Forms.RadioButton();
             this.rbSpouseMale = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txtsupouseNationalId = new Telerik.WinControls.UI.RadTextBox();
             this.txtsupouseName = new Telerik.WinControls.UI.RadTextBox();
@@ -55,17 +54,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.rbMarried = new System.Windows.Forms.RadioButton();
             this.rbSingle = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.pnlRelection = new System.Windows.Forms.Panel();
-            this.rbOthers = new System.Windows.Forms.RadioButton();
-            this.rbWife = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.rbRetired = new System.Windows.Forms.RadioButton();
+            this.rbWorking = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.pnlLivingStatus = new System.Windows.Forms.Panel();
             this.rbDead = new System.Windows.Forms.RadioButton();
             this.rbLiving = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.dtpDeathDate = new Telerik.WinControls.UI.RadDateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
@@ -133,6 +129,7 @@
             this.btnPrint = new System.Windows.Forms.ToolStripButton();
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblActiveStatus = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tbpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtResidentalAddress)).BeginInit();
@@ -256,7 +253,7 @@
             // 
             this.txtResidentalAddress.AutoSize = false;
             this.txtResidentalAddress.Controls.Add(this.txtMritalStatus);
-            this.txtResidentalAddress.Controls.Add(this.txtNonmineeRelection);
+            this.txtResidentalAddress.Controls.Add(this.txtWorkingStatus);
             this.txtResidentalAddress.Controls.Add(this.txtLivingStatus);
             this.txtResidentalAddress.Controls.Add(this.txtSpouseGender);
             this.txtResidentalAddress.Location = new System.Drawing.Point(129, 270);
@@ -275,13 +272,13 @@
             this.txtMritalStatus.TabIndex = 62;
             this.txtMritalStatus.TextChanged += new System.EventHandler(this.txtMritalStatus_TextChanged);
             // 
-            // txtNonmineeRelection
+            // txtWorkingStatus
             // 
-            this.txtNonmineeRelection.Location = new System.Drawing.Point(182, 14);
-            this.txtNonmineeRelection.Name = "txtNonmineeRelection";
-            this.txtNonmineeRelection.Size = new System.Drawing.Size(100, 20);
-            this.txtNonmineeRelection.TabIndex = 60;
-            this.txtNonmineeRelection.TextChanged += new System.EventHandler(this.txtNonmineeRelection_TextChanged);
+            this.txtWorkingStatus.Location = new System.Drawing.Point(182, 14);
+            this.txtWorkingStatus.Name = "txtWorkingStatus";
+            this.txtWorkingStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtWorkingStatus.TabIndex = 60;
+            this.txtWorkingStatus.TextChanged += new System.EventHandler(this.txtNonmineeRelection_TextChanged);
             // 
             // txtLivingStatus
             // 
@@ -303,7 +300,7 @@
             // 
             this.dtpSuposeJoinDate.CustomFormat = "dd/MM/yyyy";
             this.dtpSuposeJoinDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSuposeJoinDate.Location = new System.Drawing.Point(413, 431);
+            this.dtpSuposeJoinDate.Location = new System.Drawing.Point(413, 464);
             this.dtpSuposeJoinDate.Name = "dtpSuposeJoinDate";
             this.dtpSuposeJoinDate.Size = new System.Drawing.Size(126, 20);
             this.dtpSuposeJoinDate.TabIndex = 17;
@@ -314,7 +311,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(286, 434);
+            this.label24.Location = new System.Drawing.Point(286, 467);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(121, 13);
             this.label24.TabIndex = 42;
@@ -325,8 +322,7 @@
             this.pnlSupposeGender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSupposeGender.Controls.Add(this.rbSpouseFemale);
             this.pnlSupposeGender.Controls.Add(this.rbSpouseMale);
-            this.pnlSupposeGender.Controls.Add(this.textBox4);
-            this.pnlSupposeGender.Location = new System.Drawing.Point(131, 428);
+            this.pnlSupposeGender.Location = new System.Drawing.Point(129, 461);
             this.pnlSupposeGender.Name = "pnlSupposeGender";
             this.pnlSupposeGender.Size = new System.Drawing.Size(125, 26);
             this.pnlSupposeGender.TabIndex = 16;
@@ -338,7 +334,6 @@
             this.rbSpouseFemale.Name = "rbSpouseFemale";
             this.rbSpouseFemale.Size = new System.Drawing.Size(59, 17);
             this.rbSpouseFemale.TabIndex = 1;
-            this.rbSpouseFemale.TabStop = true;
             this.rbSpouseFemale.Text = "Female";
             this.rbSpouseFemale.UseVisualStyleBackColor = true;
             this.rbSpouseFemale.CheckedChanged += new System.EventHandler(this.rbSpouseMale_CheckedChanged);
@@ -346,6 +341,7 @@
             // rbSpouseMale
             // 
             this.rbSpouseMale.AutoSize = true;
+            this.rbSpouseMale.Checked = true;
             this.rbSpouseMale.Location = new System.Drawing.Point(4, 4);
             this.rbSpouseMale.Name = "rbSpouseMale";
             this.rbSpouseMale.Size = new System.Drawing.Size(48, 17);
@@ -356,19 +352,11 @@
             this.rbSpouseMale.UseVisualStyleBackColor = true;
             this.rbSpouseMale.CheckedChanged += new System.EventHandler(this.rbSpouseMale_CheckedChanged);
             // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Location = new System.Drawing.Point(34, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(75, 13);
-            this.textBox4.TabIndex = 53;
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(0, 436);
+            this.label23.Location = new System.Drawing.Point(0, 469);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(108, 13);
             this.label23.TabIndex = 54;
@@ -376,7 +364,7 @@
             // 
             // txtsupouseNationalId
             // 
-            this.txtsupouseNationalId.Location = new System.Drawing.Point(130, 378);
+            this.txtsupouseNationalId.Location = new System.Drawing.Point(129, 411);
             this.txtsupouseNationalId.MaxLength = 14;
             this.txtsupouseNationalId.Name = "txtsupouseNationalId";
             this.txtsupouseNationalId.NullText = "Enter spouse  national id";
@@ -387,7 +375,7 @@
             // 
             // txtsupouseName
             // 
-            this.txtsupouseName.Location = new System.Drawing.Point(131, 402);
+            this.txtsupouseName.Location = new System.Drawing.Point(129, 435);
             this.txtsupouseName.MaxLength = 50;
             this.txtsupouseName.Name = "txtsupouseName";
             this.txtsupouseName.NullText = "Enter spouse name";
@@ -399,7 +387,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(0, 405);
+            this.label22.Location = new System.Drawing.Point(0, 438);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(99, 13);
             this.label22.TabIndex = 46;
@@ -409,7 +397,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(0, 464);
+            this.label21.Location = new System.Drawing.Point(0, 497);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(124, 13);
             this.label21.TabIndex = 44;
@@ -420,8 +408,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.rbMarried);
             this.panel2.Controls.Add(this.rbSingle);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Location = new System.Drawing.Point(130, 348);
+            this.panel2.Location = new System.Drawing.Point(129, 348);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(128, 26);
             this.panel2.TabIndex = 13;
@@ -433,7 +420,6 @@
             this.rbMarried.Name = "rbMarried";
             this.rbMarried.Size = new System.Drawing.Size(60, 17);
             this.rbMarried.TabIndex = 1;
-            this.rbMarried.TabStop = true;
             this.rbMarried.Text = "Married";
             this.rbMarried.UseVisualStyleBackColor = true;
             this.rbMarried.CheckedChanged += new System.EventHandler(this.rbSingle_CheckedChanged);
@@ -441,6 +427,7 @@
             // rbSingle
             // 
             this.rbSingle.AutoSize = true;
+            this.rbSingle.Checked = true;
             this.rbSingle.Location = new System.Drawing.Point(4, 4);
             this.rbSingle.Name = "rbSingle";
             this.rbSingle.Size = new System.Drawing.Size(54, 17);
@@ -450,14 +437,6 @@
             this.rbSingle.Text = "Single";
             this.rbSingle.UseVisualStyleBackColor = true;
             this.rbSingle.CheckedChanged += new System.EventHandler(this.rbSingle_CheckedChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(34, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(75, 13);
-            this.textBox3.TabIndex = 53;
             // 
             // label20
             // 
@@ -472,66 +451,54 @@
             // pnlRelection
             // 
             this.pnlRelection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlRelection.Controls.Add(this.rbOthers);
-            this.pnlRelection.Controls.Add(this.rbWife);
-            this.pnlRelection.Controls.Add(this.textBox2);
-            this.pnlRelection.Location = new System.Drawing.Point(682, 206);
+            this.pnlRelection.Controls.Add(this.rbRetired);
+            this.pnlRelection.Controls.Add(this.rbWorking);
+            this.pnlRelection.Location = new System.Drawing.Point(129, 379);
             this.pnlRelection.Name = "pnlRelection";
-            this.pnlRelection.Size = new System.Drawing.Size(125, 26);
+            this.pnlRelection.Size = new System.Drawing.Size(128, 26);
             this.pnlRelection.TabIndex = 20;
-            this.pnlRelection.Visible = false;
             // 
-            // rbOthers
+            // rbRetired
             // 
-            this.rbOthers.AutoSize = true;
-            this.rbOthers.Location = new System.Drawing.Point(50, 4);
-            this.rbOthers.Name = "rbOthers";
-            this.rbOthers.Size = new System.Drawing.Size(56, 17);
-            this.rbOthers.TabIndex = 1;
-            this.rbOthers.TabStop = true;
-            this.rbOthers.Text = "Others";
-            this.rbOthers.UseVisualStyleBackColor = true;
-            this.rbOthers.CheckedChanged += new System.EventHandler(this.rbWife_CheckedChanged);
+            this.rbRetired.AutoSize = true;
+            this.rbRetired.Location = new System.Drawing.Point(67, 4);
+            this.rbRetired.Name = "rbRetired";
+            this.rbRetired.Size = new System.Drawing.Size(59, 17);
+            this.rbRetired.TabIndex = 1;
+            this.rbRetired.Text = "Retired";
+            this.rbRetired.UseVisualStyleBackColor = true;
+            this.rbRetired.CheckedChanged += new System.EventHandler(this.rbWife_CheckedChanged);
             // 
-            // rbWife
+            // rbWorking
             // 
-            this.rbWife.AutoSize = true;
-            this.rbWife.Location = new System.Drawing.Point(4, 4);
-            this.rbWife.Name = "rbWife";
-            this.rbWife.Size = new System.Drawing.Size(47, 17);
-            this.rbWife.TabIndex = 0;
-            this.rbWife.TabStop = true;
-            this.rbWife.Tag = "";
-            this.rbWife.Text = "Wife";
-            this.rbWife.UseVisualStyleBackColor = true;
-            this.rbWife.CheckedChanged += new System.EventHandler(this.rbWife_CheckedChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(34, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(75, 13);
-            this.textBox2.TabIndex = 53;
+            this.rbWorking.AutoSize = true;
+            this.rbWorking.Checked = true;
+            this.rbWorking.Location = new System.Drawing.Point(4, 4);
+            this.rbWorking.Name = "rbWorking";
+            this.rbWorking.Size = new System.Drawing.Size(65, 17);
+            this.rbWorking.TabIndex = 0;
+            this.rbWorking.TabStop = true;
+            this.rbWorking.Tag = "";
+            this.rbWorking.Text = "Working";
+            this.rbWorking.UseVisualStyleBackColor = true;
+            this.rbWorking.CheckedChanged += new System.EventHandler(this.rbWife_CheckedChanged);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(552, 211);
+            this.label19.Location = new System.Drawing.Point(0, 385);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(114, 13);
+            this.label19.Size = new System.Drawing.Size(94, 13);
             this.label19.TabIndex = 59;
-            this.label19.Text = "Nominee Relection";
-            this.label19.Visible = false;
+            this.label19.Text = "Working Status";
             // 
             // pnlLivingStatus
             // 
             this.pnlLivingStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLivingStatus.Controls.Add(this.rbDead);
             this.pnlLivingStatus.Controls.Add(this.rbLiving);
-            this.pnlLivingStatus.Controls.Add(this.textBox1);
-            this.pnlLivingStatus.Location = new System.Drawing.Point(129, 536);
+            this.pnlLivingStatus.Location = new System.Drawing.Point(129, 569);
             this.pnlLivingStatus.Name = "pnlLivingStatus";
             this.pnlLivingStatus.Size = new System.Drawing.Size(125, 26);
             this.pnlLivingStatus.TabIndex = 55;
@@ -543,7 +510,6 @@
             this.rbDead.Name = "rbDead";
             this.rbDead.Size = new System.Drawing.Size(66, 17);
             this.rbDead.TabIndex = 1;
-            this.rbDead.TabStop = true;
             this.rbDead.Text = "No-More";
             this.rbDead.UseVisualStyleBackColor = true;
             this.rbDead.CheckedChanged += new System.EventHandler(this.rbLiving_CheckedChanged);
@@ -551,6 +517,7 @@
             // rbLiving
             // 
             this.rbLiving.AutoSize = true;
+            this.rbLiving.Checked = true;
             this.rbLiving.Location = new System.Drawing.Point(4, 4);
             this.rbLiving.Name = "rbLiving";
             this.rbLiving.Size = new System.Drawing.Size(56, 17);
@@ -561,19 +528,11 @@
             this.rbLiving.UseVisualStyleBackColor = true;
             this.rbLiving.CheckedChanged += new System.EventHandler(this.rbLiving_CheckedChanged);
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(34, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 13);
-            this.textBox1.TabIndex = 53;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(-1, 543);
+            this.label18.Location = new System.Drawing.Point(-1, 576);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 13);
             this.label18.TabIndex = 54;
@@ -583,7 +542,7 @@
             // 
             this.dtpDeathDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDeathDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDeathDate.Location = new System.Drawing.Point(413, 540);
+            this.dtpDeathDate.Location = new System.Drawing.Point(413, 573);
             this.dtpDeathDate.Name = "dtpDeathDate";
             this.dtpDeathDate.Size = new System.Drawing.Size(126, 20);
             this.dtpDeathDate.TabIndex = 23;
@@ -593,7 +552,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(286, 544);
+            this.label17.Location = new System.Drawing.Point(286, 577);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 13);
             this.label17.TabIndex = 42;
@@ -622,7 +581,7 @@
             // 
             this.dtpWagesEffectiveDate.CustomFormat = "dd/MM/yyyy";
             this.dtpWagesEffectiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpWagesEffectiveDate.Location = new System.Drawing.Point(413, 510);
+            this.dtpWagesEffectiveDate.Location = new System.Drawing.Point(413, 543);
             this.dtpWagesEffectiveDate.Name = "dtpWagesEffectiveDate";
             this.dtpWagesEffectiveDate.Size = new System.Drawing.Size(126, 20);
             this.dtpWagesEffectiveDate.TabIndex = 22;
@@ -642,7 +601,7 @@
             // txtWagesAmount
             // 
             this.txtWagesAmount.Enabled = false;
-            this.txtWagesAmount.Location = new System.Drawing.Point(131, 510);
+            this.txtWagesAmount.Location = new System.Drawing.Point(129, 543);
             this.txtWagesAmount.MaxLength = 6;
             this.txtWagesAmount.Name = "txtWagesAmount";
             this.txtWagesAmount.NullText = "Enter Premium amount";
@@ -654,7 +613,7 @@
             // 
             // txtNomineeName
             // 
-            this.txtNomineeName.Location = new System.Drawing.Point(131, 485);
+            this.txtNomineeName.Location = new System.Drawing.Point(129, 518);
             this.txtNomineeName.MaxLength = 50;
             this.txtNomineeName.Name = "txtNomineeName";
             this.txtNomineeName.NullText = "Enter nominee name";
@@ -663,7 +622,7 @@
             // 
             // txtNomineeNationalId
             // 
-            this.txtNomineeNationalId.Location = new System.Drawing.Point(131, 460);
+            this.txtNomineeNationalId.Location = new System.Drawing.Point(129, 493);
             this.txtNomineeNationalId.MaxLength = 14;
             this.txtNomineeNationalId.Name = "txtNomineeNationalId";
             this.txtNomineeNationalId.NullText = "Enter nominee national id";
@@ -707,13 +666,13 @@
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(59, 17);
             this.rbFemale.TabIndex = 1;
-            this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
             // rbMale
             // 
             this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
             this.rbMale.Location = new System.Drawing.Point(4, 4);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(48, 17);
@@ -816,7 +775,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(0, 490);
+            this.label14.Location = new System.Drawing.Point(0, 523);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 13);
             this.label14.TabIndex = 43;
@@ -826,7 +785,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(0, 380);
+            this.label15.Location = new System.Drawing.Point(0, 413);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(127, 13);
             this.label15.TabIndex = 42;
@@ -836,7 +795,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(286, 514);
+            this.label13.Location = new System.Drawing.Point(286, 547);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(107, 13);
             this.label13.TabIndex = 40;
@@ -846,7 +805,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(0, 511);
+            this.label12.Location = new System.Drawing.Point(0, 544);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 13);
             this.label12.TabIndex = 38;
@@ -1022,53 +981,54 @@
             this.grdList.MasterTemplate.AllowSearchRow = true;
             this.grdList.MasterTemplate.AutoGenerateColumns = false;
             this.grdList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "id";
-            gridViewTextBoxColumn1.HeaderText = "id";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "dcid";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "nationalid";
-            gridViewTextBoxColumn2.HeaderText = "National ID";
-            gridViewTextBoxColumn2.Name = "dcnationalid";
-            gridViewTextBoxColumn2.Width = 138;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "memberid";
-            gridViewTextBoxColumn3.HeaderText = "Member ID";
-            gridViewTextBoxColumn3.Name = "dcmemberid";
-            gridViewTextBoxColumn3.Width = 149;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "employeeno";
-            gridViewTextBoxColumn4.HeaderText = "Employee No.";
-            gridViewTextBoxColumn4.Name = "dcemployeeno";
-            gridViewTextBoxColumn4.Width = 143;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "tscno";
-            gridViewTextBoxColumn5.HeaderText = "TSC No.";
-            gridViewTextBoxColumn5.Name = "dctscno";
-            gridViewTextBoxColumn5.Width = 118;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "membername";
-            gridViewTextBoxColumn6.HeaderText = "Name";
-            gridViewTextBoxColumn6.Name = "dcmembername";
-            gridViewTextBoxColumn6.Width = 275;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "id";
+            gridViewTextBoxColumn7.HeaderText = "id";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "dcid";
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "nationalid";
+            gridViewTextBoxColumn8.HeaderText = "National ID";
+            gridViewTextBoxColumn8.Name = "dcnationalid";
+            gridViewTextBoxColumn8.Width = 138;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "memberid";
+            gridViewTextBoxColumn9.HeaderText = "Member ID";
+            gridViewTextBoxColumn9.Name = "dcmemberid";
+            gridViewTextBoxColumn9.Width = 149;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "employeeno";
+            gridViewTextBoxColumn10.HeaderText = "Employee No.";
+            gridViewTextBoxColumn10.Name = "dcemployeeno";
+            gridViewTextBoxColumn10.Width = 143;
+            gridViewTextBoxColumn11.EnableExpressionEditor = false;
+            gridViewTextBoxColumn11.FieldName = "tscno";
+            gridViewTextBoxColumn11.HeaderText = "TSC No.";
+            gridViewTextBoxColumn11.Name = "dctscno";
+            gridViewTextBoxColumn11.Width = 118;
+            gridViewTextBoxColumn12.EnableExpressionEditor = false;
+            gridViewTextBoxColumn12.FieldName = "membername";
+            gridViewTextBoxColumn12.HeaderText = "Name";
+            gridViewTextBoxColumn12.Name = "dcmembername";
+            gridViewTextBoxColumn12.Width = 275;
             this.grdList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6});
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12});
             this.grdList.MasterTemplate.EnableAlternatingRowColor = true;
             this.grdList.MasterTemplate.EnableCustomFiltering = true;
             this.grdList.MasterTemplate.ReadOnly = true;
-            this.grdList.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.grdList.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.grdList.Name = "grdList";
             this.grdList.ReadOnly = true;
             this.grdList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.grdList.Size = new System.Drawing.Size(840, 592);
             this.grdList.TabIndex = 0;
             this.grdList.Text = "radGridView1";
+            this.grdList.SelectionChanged += new System.EventHandler(this.grdList_SelectionChanged);
             // 
             // imageList1
             // 
@@ -1286,11 +1246,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblActiveStatus
+            // 
+            this.lblActiveStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblActiveStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblActiveStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveStatus.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblActiveStatus.Location = new System.Drawing.Point(628, 0);
+            this.lblActiveStatus.Name = "lblActiveStatus";
+            this.lblActiveStatus.Size = new System.Drawing.Size(228, 24);
+            this.lblActiveStatus.TabIndex = 62;
+            this.lblActiveStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblActiveStatus.TextChanged += new System.EventHandler(this.lblActiveStatus_TextChanged);
+            // 
             // frmMemberEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 658);
+            this.Controls.Add(this.lblActiveStatus);
             this.Controls.Add(this.bindingNavigatorMain);
             this.Controls.Add(this.tabMain);
             this.Name = "frmMemberEntry";
@@ -1431,16 +1406,14 @@
         private System.Windows.Forms.Panel pnlLivingStatus;
         private System.Windows.Forms.RadioButton rbDead;
         private System.Windows.Forms.RadioButton rbLiving;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label label18;
         private Telerik.WinControls.UI.RadDateTimePicker dtpDeathDate;
         public System.Windows.Forms.Label label17;
         public System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel pnlRelection;
-        private System.Windows.Forms.RadioButton rbOthers;
-        private System.Windows.Forms.RadioButton rbWife;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txtNonmineeRelection;
+        private System.Windows.Forms.RadioButton rbRetired;
+        private System.Windows.Forms.RadioButton rbWorking;
+        private System.Windows.Forms.TextBox txtWorkingStatus;
         private System.Windows.Forms.TextBox txtLivingStatus;
         private Telerik.WinControls.UI.RadTextBox txtsupouseNationalId;
         private Telerik.WinControls.UI.RadTextBox txtsupouseName;
@@ -1449,17 +1422,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rbMarried;
         private System.Windows.Forms.RadioButton rbSingle;
-        private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label label20;
         private Telerik.WinControls.UI.RadDateTimePicker dtpSuposeJoinDate;
         public System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel pnlSupposeGender;
         private System.Windows.Forms.RadioButton rbSpouseFemale;
         private System.Windows.Forms.RadioButton rbSpouseMale;
-        private System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtMritalStatus;
         private System.Windows.Forms.TextBox txtSpouseGender;
         private System.Windows.Forms.ToolStripButton btnRefresh;
+        private System.Windows.Forms.Label lblActiveStatus;
     }
 }
